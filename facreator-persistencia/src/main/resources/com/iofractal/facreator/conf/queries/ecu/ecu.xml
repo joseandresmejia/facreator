@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="selectRfcBoid">
+        <![CDATA[
+            SELECT DISTINCT C_OBL_COLBALV1, C_IDE_RFCEEOG1, D_ICE_EFJIESR1, C_ICE_IPDEERN1, C_ICE_IPDEERN2 FROM DM_IMPIN.DD_ICE_ICCOENP1 WHERE C_IDC_ICDOENN1 = ? AND D_ICE_EFJIESR1 in (%s) AND C_IDE_EISCTPA1 between 11 and 14  AND C_ICE_EPSRTOA1 = 0 AND C_IDE_EESXTCA1 = 0 AND C_IDE_EVSITGA1 = 1 WITH UR
+        ]]>
+    </entry>
+</properties>

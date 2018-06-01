@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+	<entry key="selectEjercicioObligacion">
+    	<![CDATA[
+			select C_OBL_COLBAV1, C_OBL_EJERCIC1 from RE32D.CS_OBL_RCOEEAB1 where B_OBL_ARPELPI1 = 'S'
+    	]]>
+	</entry>
+
+</properties>

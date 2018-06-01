@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+    <entry key="selectRfcBoid">
+        <![CDATA[
+            SELECT C_IDC_RFCEEOG1 AS RFC, C_IDC_ICDOENN1 AS BOID FROM OD_SAC.MM_IDC_DICADOT1 WHERE C_IDC_RFCEEOG1 = ? WITH UR
+        ]]>
+    </entry>
+
+    <entry key="selectIdentificadorContribuyente">
+        <![CDATA[
+            SELECT C_IDC_ICDOENN1 AS IDECONT FROM OD_SAC.DD_IDC_RUFNCIS1 WHERE C_IDC_RFCEEOG1 = ? WITH UR
+        ]]>
+    </entry>
+
+    <entry key="selectRfcActual">
+        <![CDATA[
+            SELECT C_IDC_RFCEEOG1 AS RFCACTUAL FROM OD_SAC.MM_IDC_DICADOT1 WHERE C_IDC_ICDOENN1 = ? WITH UR
+        ]]>
+    </entry>
+
+    <entry key="selectStatusContribuyente">
+        <![CDATA[
+            SELECT C_IDC_CSCLIOA1 as estatus FROM OD_SAC.MM_IDC_DICADOT1  WHERE C_IDC_RFCEEOG1 = ? WITH UR
+        ]]>
+    </entry>
+    
+    <entry key="selectBoId">
+        <![CDATA[
+            SELECT C_IDC_ICDOENN1 AS BOID FROM OD_SAC.MM_IDC_DICADOT1  WHERE C_IDC_RFCEEOG1 = ? WITH UR
+        ]]>
+    </entry>
+    
+    <entry key="selectObligacionActiva">
+        <![CDATA[
+            SELECT distinct C_IDC_COLBALV1 AS CVE_OBLIGACION FROM OD_SAC.DD_IDC_OBLIGAC1  WHERE C_IDC_ICDOENN1 = ? WITH UR
+        ]]>
+    </entry>
+    
+<!--     querys utilizados  -->
+    
+    <entry key="selectCatObligaciones">
+        <![CDATA[
+            SELECT C_IDC_COLBALV1 AS CLAVE_OBLI, D_IDC_RIOENBF1 AS DESC_OBLI FROM DEC95169_OD_IMPIN.CI_IDC_COABTLA1 cg
+            WHERE cg.F_IDC_IVLNIEI1 <= CHAR (CURRENT DATE)  AND (cg.F_IDC_FVLIIEN1 IS NULL OR
+            cg.F_IDC_FVLIIEN1 >= CHAR (CURRENT DATE) ) WITH UR
+        ]]>
+    </entry>
+    
+    <entry key="selectEstadoContribuyente">
+        <![CDATA[
+             SELECT t1.C_IDC_ICDOENN1 AS BOID, t1.C_IDC_RFCEEOG1 AS RFCACTUAL, t2.C_IDC_RFCEEOG1 AS RFCHISTORICO, t1.C_IDC_CSCLIOA1 AS ESTADO
+             FROM OD_SAC.MM_IDC_DICADOT1 t1 JOIN OD_SAC.DD_IDC_RUFNCIS1 t2 on t1.C_IDC_ICDOENN1 = t2.C_IDC_ICDOENN1
+             WHERE t2.C_IDC_RFCEEOG1 = ? WITH UR
+         ]]>
+    </entry>
+    
+<!--     <entry key="selectEstadoContribuyente"> -->
+<!--         <![CDATA[ -->
+<!--             SELECT distinct t1.C_IDC_RFCEEOG1 AS RFC, t1.C_IDC_ICDOENN1 AS BOID, t2.C_IDC_ICDOENN1 AS IDECONT, -->
+<!--     t1.C_IDC_CSCLIOA1 as estatus     -->
+<!-- FROM -->
+<!--     OD_SAC.MM_IDC_DICADOT1 t1 , OD_SAC.DD_IDC_RUFNCIS1 t2 -->
+<!-- WHERE -->
+<!--     t1.C_IDC_ICDOENN1 = t2.C_IDC_ICDOENN1  -->
+<!--     and( -->
+<!--     t1.C_IDC_RFCEEOG1 = ? -->
+<!--         ]]> -->
+<!--     </entry> -->
+
+</properties>

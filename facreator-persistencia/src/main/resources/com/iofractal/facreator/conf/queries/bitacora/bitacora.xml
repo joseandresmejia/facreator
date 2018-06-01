@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="insertBitacora">
+    	<![CDATA[
+			insert into bitacora (FECHA_HORA_INCIO,FECHA_HORA_TERMINO,NUM_LECTURA_ARCHIVO,NUM_RFC_PROCESADOS,REPORTE_OPINION_POSITIVO,REPORTE_OPINION_NEGATIVO,RFC_NO_EXISTENTES, RFC_INVALIDOS,RFC_REPETIDOS,POSITIVO_SIN_OBLIGACIONES) values (?,?,?,?,?,?,?,?,?,?)		 
+    	]]>
+	</entry>
+</properties>

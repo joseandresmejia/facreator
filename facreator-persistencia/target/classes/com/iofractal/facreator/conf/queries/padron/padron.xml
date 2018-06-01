@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	<entry key="insertPadron">
+    	<![CDATA[
+			INSERT INTO DB2ADMIN.PADRON(RFC) VALUES(?)
+    	]]>
+	</entry>
+	<entry key="truncarPadron">
+    	<![CDATA[
+			TRUNCATE TABLE USIGPA9.PADRON IMMEDIATE
+    	]]>
+	</entry>
+	<entry key="truncarEcuTemp">
+    	<![CDATA[
+			TRUNCATE TABLE USIGPA9.TEMP_DD_ICE_ICCOENP1 IMMEDIATE
+    	]]>
+	</entry>
+	<entry key="truncarIdcTempDICADOT1">
+    	<![CDATA[
+			TRUNCATE TABLE USIGPA9.TEMP_MM_IDC_DICADOT1 IMMEDIATE
+    	]]>
+	</entry>
+	<entry key="truncarArca">
+    	<![CDATA[
+			TRUNCATE TABLE DB2ADMIN.ARCA IMMEDIATE
+    	]]>
+	</entry>
+	
+	<entry key="insertEcuICCOENP1">
+    	<![CDATA[
+			INSERT INTO USIGPA9.TEMP_DD_ICE_ICCOENP1 (select * from DM_IMPIN.DD_ICE_ICCOENP1 where C_IDE_RFCEEOG1 in (select RFC from PADRON))
+    	]]>
+	</entry>
+	
+	<entry key="insertIdcDICADOT1">
+    	<![CDATA[
+			INSERT INTO USIGPA9.TEMP_MM_IDC_DICADOT1 (select * from OD_SAC.MM_IDC_DICADOT1 where C_IDC_RFCEEOG1 in (select RFC from PADRON))
+    	]]>
+	</entry>
+	
+	<entry key="insertIdcRUFNCIS1">
+    	<![CDATA[
+			INSERT INTO USIGPA9.TEMP_DD_IDC_RUFNCIS1 (select * from OD_SAC.DD_IDC_RUFNCIS1 where C_IDC_RFCEEOG1 in (select RFC from PADRON))
+    	]]>
+	</entry>
+</properties>
